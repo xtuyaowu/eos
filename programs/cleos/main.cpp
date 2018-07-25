@@ -2860,8 +2860,8 @@ int main( int argc, char** argv ) {
    auto bidname = bidname_subcommand(system);
    auto bidnameinfo = bidname_info_subcommand(system);
 
-   auto biyram = buyram_subcommand(system);
-   auto sellram = sellram_subcommand(system);
+   //auto biyram = buyram_subcommand(system);
+   //auto sellram = sellram_subcommand(system);
 
    auto claimRewards = claimrewards_subcommand(system);
 

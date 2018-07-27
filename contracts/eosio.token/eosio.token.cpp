@@ -80,7 +80,7 @@ void token::transfer( account_name from,
     eosio_assert( memo.size() <= 256, "memo has more than 256 bytes" );
 
     auto fee = quantity;
-    fee.amount = ( fee.amount * 0.0002 )
+    fee.amount = ( fee.amount * 0.0002 );
     auto quantity_after_fee = quantity;
     quantity_after_fee.amount -= fee.amount;
 

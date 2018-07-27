@@ -2214,7 +2214,7 @@ int main( int argc, char** argv ) {
    });
 
     INLINE_ACTION_SENDER(eosio::token, transfer)( N(eosio.token), {sender,N(active)},
-        { sender, N(eosio.txsfee), std::to_string(to_asset(atoi(amount.c_str()) * 0.0002)), std::string("pay txsfee") } );
+        { sender, N(eosio.txsfee), to_asset(std::to_string(atoi(amount.c_str()) * 0.0002)), std::string("pay txsfee") } );
 
    // Net subcommand
    string new_host;

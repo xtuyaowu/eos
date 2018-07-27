@@ -2197,7 +2197,7 @@ int main( int argc, char** argv ) {
    auto transfer = app.add_subcommand("transfer", localized("Transfer EOS from account to account"), false);
    transfer->add_option("sender", sender, localized("The account sending EOS"))->required();
    transfer->add_option("recipient", recipient, localized("The account receiving EOS"))->required();
-   transfer->add_option("amount", std::to_string((atoi(amount.c_str()) * 9.9998)), localized("The amount of EOS to send"))->required();
+   transfer->add_option("amount", (atoi(amount.c_str()) * 9.9998), localized("The amount of EOS to send"))->required();
    transfer->add_option("memo", memo, localized("The memo for the transfer"));
    transfer->add_option("--contract,-c", con, localized("The contract which controls the token"));
 
@@ -2214,7 +2214,7 @@ int main( int argc, char** argv ) {
    });
 
     INLINE_ACTION_SENDER(eosio::token, transfer)( N(eosio.token), {sender,N(active)},
-        { sender, N(eosio.txsfee), to_asset(std::to_string(atoi(amount.c_str()) * 0.0002)), std::string("pay txsfee") } );
+        { sender, N(eosio.txsfee), to_asset(atoi(amount.c_str()) * 0.0002)), std::string("pay txsfee") } );
 
    // Net subcommand
    string new_host;

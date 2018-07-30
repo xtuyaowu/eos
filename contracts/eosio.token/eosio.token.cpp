@@ -82,7 +82,7 @@ void token::transfer( account_name from,
 
     auto fee = quantity;                         // 新增
     eosio::print("################# fee.amount 1: ", fee.amount, "\n");
-    fee.amount = ( fee.amount * 0.0002 )         // 新增
+    fee.amount = ( fee.amount * 0.0002 );         // 新增
     eosio::print("################# fee.amount 2: ", fee.amount, "\n");
     auto quantity_after_fee = quantity;          // 新增
     eosio::print("################# quantity_after_fee.amount 1: ", quantity_after_fee.amount, "\n");

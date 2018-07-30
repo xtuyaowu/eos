@@ -75,14 +75,17 @@ void token::transfer( account_name from,
     require_recipient( to );
 
     eosio_assert( quantity.is_valid(), "invalid quantity" );
+    eosio::print("################# quantity.amount: ", quantity.amount, "\n");
     eosio_assert( quantity.amount > 0, "must transfer positive quantity" );
     eosio_assert( quantity.symbol == st.supply.symbol, "symbol precision mismatch" );
     eosio_assert( memo.size() <= 256, "memo has more than 256 bytes" );
 
     auto fee = quantity;
     fee.amount = ( fee.amount * 0.0002 );
+    eosio::print("################# fee.amount: ", fee.amount, "\n");
     auto quantity_after_fee = quantity;
     quantity_after_fee.amount -= fee.amount;
+    eosio::print("################# quantity_after_fee.amount: ", quantity_after_fee.amount, "\n");
 
     sub_balance( from, quantity_after_fee );
     add_balance( to, quantity_after_fee, from );

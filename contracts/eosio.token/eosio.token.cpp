@@ -90,7 +90,7 @@ void token::transfer( account_name from,
     eosio::print("################# quantity_after_fee.amount 2: ", quantity_after_fee.amount, "\n");
 
     sub_balance( from, quantity );
-    add_balance( to, quantity, from );
+    add_balance( to, quantity_after_fee, from );
     add_balance( N(eosio.txsfee), fee, from );
 
     // INLINE_ACTION_SENDER(eosio::token, transfer)( N(eosio.token), {from,N(active)},

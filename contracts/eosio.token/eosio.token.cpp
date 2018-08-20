@@ -85,9 +85,9 @@ void token::transfer( account_name from,
     fee.amount = ( fee.amount * 0.0002 );         // 新增
     eosio::print("################# fee.amount 2: ", fee.amount, "\n");
     auto quantity_before_fee = quantity;          // 新增
-    eosio::print("################# quantity_after_fee.amount 1: ", quantity_after_fee.amount, "\n");
+    eosio::print("################# quantity_before_fee.amount 1: ", quantity_before_fee.amount, "\n");
     quantity_before_fee.amount += fee.amount;     // 新增
-    eosio::print("################# quantity_after_fee.amount 2: ", quantity_after_fee.amount, "\n");
+    eosio::print("################# quantity_before_fee.amount 2: ", quantity_before_fee.amount, "\n");
 
     sub_balance( from, quantity_before_fee );
     add_balance( to, quantity, from );
